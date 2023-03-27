@@ -40,14 +40,6 @@ namespace Targv21
             };
             sld.ValueChanged += Stp_ValueChanged;
 
-            //AbsoluteLayout abs = new AbsoluteLayout { Children = { sld, stp, lbl } };
-            //AbsoluteLayout.SetLayoutBounds(sld, new Rectangle(0.2, 0.2, 300, 100));
-            //AbsoluteLayout.SetLayoutFlags(sld, AbsoluteLayoutFlags.PositionProportional);
-            //AbsoluteLayout.SetLayoutBounds(stp, new Rectangle(0.6, 0.5, 300, 100));
-            //AbsoluteLayout.SetLayoutFlags(stp, AbsoluteLayoutFlags.PositionProportional);
-            //AbsoluteLayout.SetLayoutBounds(lbl, new Rectangle(0.2, 0.8, 300, 100));
-            //AbsoluteLayout.SetLayoutFlags(lbl, AbsoluteLayoutFlags.PositionProportional);
-            //Content = abs;
             List<Object> objects = new List<Object> { lbl, stp,sld };
             AbsoluteLayout abs = new AbsoluteLayout();
             double y = 0;
@@ -68,14 +60,3 @@ namespace Targv21
         }
     }
 }
-/*
- * List<Object> objects = new List<Object> {lbl, stp};
-            AbsoluteLayout abs = new AbsoluteLayout ();
-            double y = 0;
-            foreach (var item in objects)
-            {
-                y = y + 0.2;
-                AbsoluteLayout.SetLayoutBounds((BindableObject)item, new Rectangle(0.2, y, 300, 100));
-                AbsoluteLayout.SetLayoutFlags((BindableObject)item, AbsoluteLayoutFlags.PositionProportional);
-            }
-            Content = abs;*/
