@@ -12,8 +12,8 @@ namespace Targv21
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Start_Page : ContentPage
     {
-        List<ContentPage> pages=new List<ContentPage>() { new Editor_Page(),new Timer_Page(), new Box_Page(),new DateTime_Page(),new StepperSlider_Page()};
-        List<string> texts=new List<string> { "Editor Page", "Timer Page", "BoxView Page","Date/Time Page", "Stepper Slider Page"};
+        List<ContentPage> pages=new List<ContentPage>() { new Editor_Page(),new Timer_Page(), new Box_Page(),new DateTime_Page(),new StepperSlider_Page(),new PopUp_Page(),new Picker_Page(),new Table_Page()};
+        List<string> texts=new List<string> { "Editor Page", "Timer Page", "BoxView Page","Date/Time Page", "Stepper Slider Page","Teaded","Lehed","Tabel"};
         Random random= new Random();
         public Start_Page()
         {          

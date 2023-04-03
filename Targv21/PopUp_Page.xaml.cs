@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -51,32 +50,26 @@ namespace Targv21
             alertQuestButton.Clicked += AlertQuestButton_Clicked;
             Content = new StackLayout { Children = { alertButton, alertYesNoButton, alertListButton, alertQuestButton } };
         }
-
-        private void AlertButton_Clicked(object sender, EventArgs e)
-        {
-            DisplayAlert("Teade", "Mul on tähtis teade!", "Sulge");
-        }
-
-        private async void AlertQuestButton_Clicked(object sender, EventArgs e)
-        {
-
-            string rez = await DisplayPromptAsync("Küsimus", "Mis päev täna on?", "Ok", "Cancel", "Siia kirjuta päeva nimetus", keyboard: Keyboard.Chat);
-            string rez2 = await DisplayPromptAsync("Teine küsimus", "Millega võrdub 2+2?", "Vastan", "Ei vasta", initialValue: "10", maxLength: 3, keyboard: Keyboard.Numeric);
-
-
-
-        }
-        List<Color> varv = new List<Color> { Color.Blue, Color.Black, Color.White };
-        
         private void Varvi_muutus(string varv)
         {
-            alertListButton.BackgroundColor = varvid[varv];
+            Content.BackgroundColor = varvid[varv];
+            //alertListButton.BackgroundColor = varvid[varv];
         }
         private async void AlertListButton_Clicked(object sender, EventArgs e)
         {
             string valik = await DisplayActionSheet("Mis värv sulle meeldib", "Loobu", "Kinni", "Sinine", "Must", "Valge");
             Varvi_muutus(valik);
+        }
+        private void AlertButton_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Teade", "Mul on tähtis teade!", "Sulge");
+        }
+        private async void AlertQuestButton_Clicked(object sender, EventArgs e)
+        {
 
+            string rez = await DisplayPromptAsync("Küsimus", "Mis päev täna on?", "Ok", "Cancel", "Siia kirjuta päeva nimetus", keyboard: Keyboard.Chat);
+            Varvi_muutus(rez);
+            string rez2=await DisplayPromptAsync("Teine küsimus","Millega võrdub 2+2?","Vastan","Ei vasta",initialValue:"10",maxLength:3,keyboard:Keyboard.Numeric);
         }
 
         private async void AlertYesNoButton_Clicked(object sender, EventArgs e)
