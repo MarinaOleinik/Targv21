@@ -10,7 +10,7 @@ namespace Targv21
         {
             InitializeComponent();
 
-            MainPage =new NavigationPage(new Start_Page());
+            MainPage =new NavigationPage(new Failid());
         }
 
         protected override void OnStart()

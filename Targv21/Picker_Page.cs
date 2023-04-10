@@ -44,27 +44,19 @@ namespace Targv21
             st =new StackLayout { Children = {picker,entry,btn,frame} };
             Content = st;
         }
-
         private void Btn_Clicked(object sender, EventArgs e)
         {
-            webview.Source = new UrlWebViewSource { Url = (string)Preferences.Get("link", "https://www.postimees.ee/") };//(string)App.Current.Properties["link"] };
+            webview.Source = new UrlWebViewSource { Url = (string)Preferences.Get("link", "https://www.postimees.ee/") };
         }
-
         protected override void OnAppearing()
         {
             object link = "";
             entry.Text = Preferences.Get("link", "https://www.postimees.ee/");
-            //if (App.Current.Properties.TryGetValue("link", out link))
-            //{
-            //entry.Text= (string)App.Current.Properties["link"];
-
-            //}
             base.OnAppearing();
         }
         private void Entry_Completed(object sender, EventArgs e)
         {
             string value = "https://www."+ entry.Text;
-            //App.Current.Properties["link"]=value;
             Preferences.Set("link", value);
         }
 
